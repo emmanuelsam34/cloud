@@ -1,5 +1,5 @@
-FROM ubuntu
-MAINTAINER Emmanuel Agbedejobi <emmanuelagbedejobi@gmail.com>
-COPY time_counter /usr/local/bin/time_counter
-RUN chmod +x /usr/local/bin/time_counter
-CMD ["/usr/local/bin/time_counter"]
+FROM python:3.6.1-alpine
+RUN pip install --upgrade pip
+RUN pip install flask
+CMD ["python","app.py"]
+COPY app.py /app.py
